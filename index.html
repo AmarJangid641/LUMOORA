@@ -1,0 +1,1192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description"
+    content="LUMOORA Display â€” LED screen manufacturing, installation and display solutions for indoor, outdoor, curved, pole mount, wall mount, mobile and rental LED screens.">
+  <meta name="theme-color" content="#07133f">
+  <title>LUMOORA DISPLAY | Brighter Displays. Bigger Impact.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #07133f;
+      --blue: #1264ff;
+      --cyan: #19c9ff;
+      --pink: #e500b8;
+      --orange: #ff7a00;
+      --text: #101936;
+      --muted: #64708d;
+      --bg: #f6f8ff;
+      --white: #fff;
+      --line: #e4e8f5;
+      --shadow: 0 20px 60px rgba(11, 28, 79, .12);
+      --shadow-3d: 0 25px 50px -12px rgba(11, 28, 79, .25), 0 0 25px rgba(18, 100, 255, .08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #0a2cff, #bd00c7, #ff6900);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(7, 19, 63, .18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(7, 19, 63, .25);
+    }
+
+    .btn-light {
+      background: #fff;
+      border-color: #dce2f3;
+      color: var(--navy);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(228, 232, 245, .8);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -1.8px;
+      color: var(--navy);
+    }
+
+    .brand .oo {
+      display: inline-block;
+      font-size: 1.03em;
+      background: linear-gradient(120deg, #ff7200, #ff007d, #006dff, #00cfff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .brand small {
+      font-size: 9px;
+      vertical-align: top;
+      margin-left: 3px;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #3e4864;
+    }
+
+    .navlinks a:hover {
+      color: var(--blue);
+    }
+
+    .menu {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: radial-gradient(circle at 80% 20%, rgba(18, 100, 255, .16), transparent 30%), linear-gradient(135deg, #f8fbff 0%, #fff 55%, #f5f7ff 100%);
+      padding: 70px 0 85px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #edf3ff;
+      border: 1px solid #d9e5ff;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #1648c8;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .4px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 78px);
+      line-height: .98;
+      letter-spacing: -4px;
+      margin: 18px 0;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0;
+    }
+
+    .stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      color: var(--navy);
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-media {
+      position: relative;
+      perspective: 1000px;
+    }
+
+    .hero-card {
+      background: #07133f;
+      border-radius: 26px;
+      padding: 10px;
+      box-shadow: 0 35px 90px rgba(7, 19, 63, .25);
+      transition: transform 0.2s ease-out, box-shadow 0.3s;
+      transform-style: preserve-3d;
+    }
+
+    .hero-card img {
+      height: 560px;
+      border-radius: 18px;
+    }
+
+    .glow {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(135deg, #0d6cff, #ef00b7);
+      filter: blur(55px);
+      opacity: .25;
+      right: -50px;
+      bottom: -40px;
+      z-index: -1;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section.alt {
+      background: var(--bg);
+    }
+
+    .eyebrow {
+      color: #145cff;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 38px;
+    }
+
+    .section h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-top: 8px;
+    }
+
+    .section-head p {
+      max-width: 510px;
+      color: var(--muted);
+    }
+
+    /* 3D PERSPECTIVE PRODUCTS GRID */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      perspective: 1200px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(12, 31, 83, .07);
+      transition: transform 0.15s ease-out, box-shadow 0.3s, border-color 0.3s;
+      transform-style: preserve-3d;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-3d);
+      border-color: #cbd8ff;
+    }
+
+    /* 3D Specular reflection on cards */
+    .card .card-shine {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.4), transparent 70%);
+      pointer-events: none;
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card:hover .card-shine {
+      opacity: 1;
+    }
+
+    .card-img {
+      height: 245px;
+      background: #eef2ff;
+      overflow: hidden;
+    }
+
+    .card-img img {
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card:hover .card-img img {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 20px;
+      transform: translateZ(15px);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #1552db;
+      background: #edf3ff;
+      border-radius: 999px;
+      padding: 5px 9px;
+      margin-bottom: 9px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 13px;
+      font-size: 13px;
+      font-weight: 900;
+      color: #0c4dff;
+      transition: transform 0.2s;
+    }
+
+    .card:hover .card-link {
+      transform: translateX(4px);
+    }
+
+    /* 3D PERSPECTIVE FEATURES GRID */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      perspective: 1000px;
+    }
+
+    .feature {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      transition: transform 0.15s ease-out, box-shadow 0.3s, border-color 0.3s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .feature:hover {
+      box-shadow: var(--shadow-3d);
+      border-color: #cbd8ff;
+    }
+
+    .feature h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .feature p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* 3D PERSPECTIVE PROJECTS GALLERY */
+    .projects {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 20px;
+      perspective: 1200px;
+    }
+
+    .project-big,
+    .project-small {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      min-height: 560px;
+      transition: transform 0.2s ease-out, box-shadow 0.3s;
+      transform-style: preserve-3d;
+    }
+
+    .project-small {
+      min-height: 270px;
+    }
+
+    .project-stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .project-big img,
+    .project-small img {
+      height: 100%;
+      transition: transform 0.5s;
+    }
+
+    .project-big:hover img,
+    .project-small:hover img {
+      transform: scale(1.05);
+    }
+
+    .project-big:hover,
+    .project-small:hover {
+      box-shadow: 0 25px 60px rgba(7, 19, 63, .3);
+    }
+
+    .project-label {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 16px 18px;
+      border-radius: 15px;
+      background: rgba(4, 12, 38, .75);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      transform: translateZ(20px);
+    }
+
+    .project-label strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .project-label span {
+      font-size: 12px;
+      color: #d9e1ff;
+    }
+
+    .cta {
+      padding: 65px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(120deg, #07133f, #0d2b7a 60%, #116dff);
+      color: #fff;
+      border-radius: 28px;
+      padding: 50px;
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 70px rgba(7, 19, 63, .25);
+    }
+
+    .cta-box:after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: -90px;
+      top: -110px;
+      background: linear-gradient(135deg, #ff00b7, #00c8ff);
+      filter: blur(70px);
+      opacity: .25;
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
+
+    .cta p {
+      color: #cbd8ff;
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .contact-card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(12, 31, 83, .05);
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-item .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #edf3ff;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item .icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-item b {
+      display: block;
+    }
+
+    .contact-item span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 13px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #dce2f0;
+      border-radius: 11px;
+      font: inherit;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #4480ff;
+      box-shadow: 0 0 0 3px rgba(68, 128, 255, .12);
+    }
+
+    textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #050c26;
+      color: #dbe3ff;
+      padding: 50px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    footer .brand {
+      color: #fff;
+    }
+
+    footer p,
+    footer a {
+      font-size: 13px;
+      color: #9ba9d0;
+    }
+
+    footer h4 {
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      margin-top: 35px;
+      padding-top: 20px;
+      font-size: 12px;
+      color: #8795ba;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 99;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    @media(max-width:900px) {
+      .navlinks {
+        display: none;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-media {
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .nav {
+        height: 68px;
+      }
+
+      .brand {
+        font-size: 25px;
+      }
+
+      h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .hero {
+        padding: 50px 0 60px;
+      }
+
+      .hero-card img {
+        height: 470px;
+      }
+
+      .section {
+        padding: 62px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 32px 24px;
+        display: block;
+      }
+
+      .cta .btn {
+        margin-top: 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        display: block;
+      }
+
+      .footer-bottom span {
+        display: block;
+        margin-top: 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">LUM<span class="oo">OO</span>RA</a>
+      <nav class="navlinks">
+        <a href="#home">Home</a><a href="#products">Products</a><a href="#solutions">Solutions</a><a
+          href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="tel:+918160470897">Call Now</a>
+      </nav>
+      <button class="menu" aria-label="Menu" onclick="toggleMenu()">â˜°</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker">LED SCREEN MANUFACTURING COMPANY</span>
+          <h1>Brighter Displays.<br><span class="gradient">Bigger Impact.</span></h1>
+          <p>Premium LED display solutions designed, manufactured and installed for advertising, branding, events,
+            retail, corporate spaces and high-impact outdoor visibility.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#products">Explore Products</a>
+            <a class="btn btn-light" href="#contact">Get a Quote</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>Indoor</strong><span>High-resolution displays</span></div>
+            <div class="stat"><strong>Outdoor</strong><span>Day & night visibility</span></div>
+            <div class="stat"><strong>Custom</strong><span>Made for your application</span></div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="hero-card" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+            <img src="assets/curve-led-installation.png" alt="LUMOORA curved LED screen installation">
+          </div>
+          <div class="glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Our Products</div>
+            <h2>LED solutions for every need.</h2>
+          </div>
+          <p>From compact indoor displays to large-format outdoor advertising screens, LUMOORA delivers professional
+            display systems for real-world applications.</p>
+        </div>
+        <div class="products">
+          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
+            <div class="card-shine"></div>
+            <div class="card-img"><img src="assets/product-indoor-catalogue.jpg" alt="Indoor LED screen"></div>
+            <div class="card-body"><span class="tag">INDOOR</span>
+              <h3>Indoor LED Screen</h3>
+              <p>High-resolution, seamless visuals for showrooms, offices, auditoriums, events and indoor advertising.
+              </p><a class="card-link" href="#contact">Request specification</a>
+            </div>
+          </article>
+          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
+            <div class="card-shine"></div>
+            <div class="card-img"><img src="assets/outdoor-pole-led-installation.jpg" alt="Outdoor LED screen"></div>
+            <div class="card-body"><span class="tag">OUTDOOR</span>
+              <h3>Outdoor LED Screen</h3>
+              <p>High-brightness displays built for strong daylight visibility and demanding outdoor environments.</p><a
+                class="card-link" href="#contact">Request specification</a>
+            </div>
+          </article>
+          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
+            <div class="card-shine"></div>
+            <div class="card-img"><img src="assets/product-led-wall-catalogue.jpg" alt="Rental LED screen"></div>
+            <div class="card-body"><span class="tag">RENTAL & EVENTS</span>
+              <h3>Rental LED Screen</h3>
+              <p>Flexible display solutions for exhibitions, stages, launches, weddings, concerts and temporary events.
+              </p><a class="card-link" href="#contact">Request specification</a>
+            </div>
+          </article>
+          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
+            <div class="card-shine"></div>
+            <div class="card-img"><img src="assets/curved-corner-led-installation.jpg" alt="Curved LED screen"></div>
+            <div class="card-body"><span class="tag">IMMERSIVE</span>
+              <h3>Curved LED Screen</h3>
+              <p>Curved and creative formats that turn architectural spaces into immersive visual experiences.</p><a
+                class="card-link" href="#contact">Request specification</a>
+            </div>
+          </article>
+          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
+            <div class="card-shine"></div>
+            <div class="card-img"><img src="assets/indoor-wall-installation.jpg" alt="Wall mount LED screen"></div>
+            <div class="card-body"><span class="tag">WALL MOUNT</span>
+              <h3>Wall Mount LED</h3>
+              <p>Clean, premium installations for branding, retail, reception areas, showrooms and commercial spaces.
+              </p><a class="card-link" href="#contact">Request specification</a>
+            </div>
+          </article>
+          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
+            <div class="card-shine"></div>
+            <div class="card-img"><img src="assets/pole-mount-night-installation.jpg"
+                alt="Pole mount LED advertising screen"></div>
+            <div class="card-body"><span class="tag">ADVERTISING</span>
+              <h3>Pole Mount LED Screen</h3>
+              <p>High-impact roadside and commercial advertising screens designed for maximum attention and visibility.
+              </p><a class="card-link" href="#contact">Request specification</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Why LUMOORA</div>
+            <h2>Built for visibility. Designed for impact.</h2>
+          </div>
+          <p>Every display solution is planned around brightness, reliability, visual quality, installation requirements
+            and the customer's actual use case.</p>
+        </div>
+        <div class="features">
+          <div class="feature" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+            <h3>High Brightness</h3>
+            <p>Crystal-clear visuals engineered for strong visibility across indoor and outdoor applications.</p>
+          </div>
+          <div class="feature" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+            <h3>Energy Efficient</h3>
+            <p>Performance-focused systems designed to deliver strong display output with efficient operation.</p>
+          </div>
+          <div class="feature" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+            <h3>Seamless Display</h3>
+            <p>Professional cabinet and module integration for a clean, continuous visual experience.</p>
+          </div>
+          <div class="feature" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+            <h3>Custom Solutions</h3>
+            <p>Custom sizes, structures and formats to match your location, application and branding needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Installation Gallery</div>
+            <h2>Displays that stand out.</h2>
+          </div>
+          <p>A selection of LED display applications represented by your supplied installation images.</p>
+        </div>
+        <div class="projects">
+          <a class="project-big" href="#contact" onmousemove="handleTilt(event, this, 5)"
+            onmouseleave="resetTilt(this)"><img src="assets/pole-mount-temple-installation.png"
+              alt="Pole mount LED installation">
+            <div class="project-label"><strong>Pole Mount Advertising</strong><span>Roadside, commercial &
+                high-visibility locations</span></div>
+          </a>
+          <div class="project-stack">
+            <a class="project-small" href="#contact" onmousemove="handleTilt(event, this, 5)"
+              onmouseleave="resetTilt(this)"><img src="assets/wall-mount-commercial-installation.jpg"
+                alt="Wall mount LED installation">
+              <div class="project-label"><strong>Wall Mount Display</strong><span>Retail & commercial branding</span>
+              </div>
+            </a>
+            <a class="project-small" href="#contact" onmousemove="handleTilt(event, this, 5)"
+              onmouseleave="resetTilt(this)"><img src="assets/pole-mount-roadside-installation.png"
+                alt="Outdoor LED advertising">
+              <div class="project-label"><strong>Outdoor Advertising</strong><span>Day & night visual
+                  communication</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <div class="eyebrow" style="color:#72d9ff">LET'S BRIGHTEN YOUR BRAND</div>
+            <h2>Ready for your next LED display?</h2>
+            <p>Tell us your screen size, location and application. We can help you choose the right display solution.
+            </p>
+          </div><a class="btn btn-light"
+            href="https://wa.me/918160470897?text=Hello%20LUMOORA,%20I%20need%20an%20LED%20screen%20quotation."
+            target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">About LUMOORA</div>
+            <h2>Professional LED display manufacturing.</h2>
+          </div>
+          <p>LUMOORA focuses on LED screen manufacturing, custom display solutions and installation support for
+            businesses, advertisers, events and commercial spaces.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-item">
+              <div><b>Premium Quality</b><span>Display solutions focused on picture quality, durability and professional
+                  finish.</span></div>
+            </div>
+            <div class="contact-item">
+              <div><b>Custom Engineering</b><span>Screen formats and structures planned around the installation
+                  environment.</span></div>
+            </div>
+            <div class="contact-item">
+              <div><b>Installation Support</b><span>From product selection to installation-ready solutions for your
+                  project.</span></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <h3 style="font-size:25px;margin-bottom:8px">What we supply</h3>
+            <p style="color:var(--muted);margin-bottom:18px">Indoor LED, Outdoor LED, Curved LED, Pole Mount LED, Wall
+              Mount LED, Rental LED, Mobile LED, Custom Displays</p>
+            <a class="btn btn-primary" href="#contact">Discuss Your Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Contact</div>
+            <h2>Let's build your display.</h2>
+          </div>
+          <p>Share your requirement and our team can get back to you with a suitable LED display solution.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-item">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M17.3545 22.2323C15.3344 21.7262 11.1989 20.2993 7.44976 16.5502C3.70065 12.8011 2.2738 8.66559 1.76767 6.6455C1.47681 5.48459 2.00058 4.36434 2.88869 3.72997L5.21694 2.06693C6.57922 1.09388 8.47432 1.42407 9.42724 2.80051L10.893 4.91776C11.5152 5.8165 11.3006 7.0483 10.4111 7.68365L9.24234 8.51849C9.41923 9.1951 9.96939 10.5846 11.6924 12.3076C13.4154 14.0306 14.8049 14.5807 15.4815 14.7576L16.3163 13.5888C16.9517 12.6994 18.1835 12.4847 19.0822 13.1069L21.1995 14.5727C22.5759 15.5257 22.9061 17.4207 21.933 18.783L20.27 21.1113C19.6356 21.9994 18.5154 22.5232 17.3545 22.2323ZM8.86397 15.136C12.2734 18.5454 16.0358 19.8401 17.8405 20.2923C18.1043 20.3583 18.4232 20.2558 18.6425 19.9488L20.3056 17.6205C20.6299 17.1665 20.5199 16.5348 20.061 16.2171L17.9438 14.7513L17.0479 16.0056C16.6818 16.5182 16.0047 16.9202 15.2163 16.7501C14.2323 16.5378 12.4133 15.8569 10.2782 13.7218C8.1431 11.5867 7.46219 9.7677 7.24987 8.7837C7.07977 7.9953 7.48181 7.31821 7.99439 6.95208L9.24864 6.05618L7.78285 3.93893C7.46521 3.48011 6.83351 3.37005 6.37942 3.6944L4.05117 5.35744C3.74413 5.57675 3.64162 5.89565 3.70771 6.15943C4.15989 7.96418 5.45459 11.7266 8.86397 15.136Z"
+                      fill="#0F0F0F"></path>
+                  </g>
+                </svg></div>
+              <div><b>Call</b><span><a href="tel:+918160470897">8160470897</a></span></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#000000"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <rect x="3" y="5" width="18" height="14" rx="2" stroke="#000000" stroke-width="2"
+                      stroke-linecap="round"></rect>
+                  </g>
+                </svg></div>
+              <div><b>Email</b><span><a href="mailto:amar@lumooradisplay.com">amar@lumooradisplay.com</a></span></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
+                      stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </svg></div>
+              <div><b>Location</b><span>LED SURAT, Gujarat, India</span></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <form onsubmit="sendWhatsApp(event)">
+              <input id="name" required placeholder="Your Name">
+              <input id="phone" required placeholder="Mobile Number">
+              <select id="product">
+                <option value="">Select Product</option>
+                <option>Indoor LED Screen</option>
+                <option>Outdoor LED Screen</option>
+                <option>Pole Mount LED Screen</option>
+                <option>Wall Mount LED Screen</option>
+                <option>Curved LED Screen</option>
+                <option>Rental LED Screen</option>
+                <option>Custom LED Display</option>
+              </select>
+              <textarea id="message" placeholder="Tell us screen size, location or requirement"></textarea>
+              <button class="btn btn-primary" type="submit">Send Requirement on WhatsApp <svg width="15px" height="15px"
+                  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M8 10.5H16" stroke="#f7f7f7" stroke-width="1.5" stroke-linecap="round"></path>
+                    <path d="M8 14H13.5" stroke="#f7f7f7" stroke-width="1.5" stroke-linecap="round"></path>
+                    <path
+                      d="M17 3.33782C15.5291 2.48697 13.8214 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22C17.5228 22 22 17.5228 22 12C22 10.1786 21.513 8.47087 20.6622 7"
+                      stroke="#f7f7f7" stroke-width="1.5" stroke-linecap="round"></path>
+                  </g>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand">LUM<span class="oo">OO</span>RA</div>
+          <p style="margin-top:13px;max-width:420px">Brighter Displays. Bigger Impact. LED screen manufacturing and
+            display solutions for modern advertising, branding and visual communication.</p>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <p><a href="#products">Indoor LED</a></p>
+          <p><a href="#products">Outdoor LED</a></p>
+          <p><a href="#products">Curved LED</a></p>
+          <p><a href="#products">Pole Mount LED</a></p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <p><a href="#about">About</a></p>
+          <p><a href="#projects">Projects</a></p>
+          <p><a href="#contact">Contact</a></p>
+          <p><a href="tel:+918160470897">Call 8160470897</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>Â© <span id="year"></span> LUMOORA DISPLAY. All rights
+          reserved.</span><span>Brighter Displays. Bigger Impact.</span></div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a class="floating-whatsapp"
+    href="https://wa.me/918160470897?text=Hello%20LUMOORA,%20I%20have%20an%20inquiry%20regarding%20LED%20screens."
+    target="_blank" rel="noopener" title="Chat on WhatsApp"><svg viewBox="0 0 32 32" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M16 31C23.732 31 30 24.732 30 17C30 9.26801 23.732 3 16 3C8.26801 3 2 9.26801 2 17C2 19.5109 2.661 21.8674 3.81847 23.905L2 31L9.31486 29.3038C11.3014 30.3854 13.5789 31 16 31ZM16 28.8462C22.5425 28.8462 27.8462 23.5425 27.8462 17C27.8462 10.4576 22.5425 5.15385 16 5.15385C9.45755 5.15385 4.15385 10.4576 4.15385 17C4.15385 19.5261 4.9445 21.8675 6.29184 23.7902L5.23077 27.7692L9.27993 26.7569C11.1894 28.0746 13.5046 28.8462 16 28.8462Z"
+          fill="#BFC8D0"></path>
+        <path
+          d="M28 16C28 22.6274 22.6274 28 16 28C13.4722 28 11.1269 27.2184 9.19266 25.8837L5.09091 26.9091L6.16576 22.8784C4.80092 20.9307 4 18.5589 4 16C4 9.37258 9.37258 4 16 4C22.6274 4 28 9.37258 28 16Z"
+          fill="url(#paint0_linear_87_7264)"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 18.5109 2.661 20.8674 3.81847 22.905L2 30L9.31486 28.3038C11.3014 29.3854 13.5789 30 16 30ZM16 27.8462C22.5425 27.8462 27.8462 22.5425 27.8462 16C27.8462 9.45755 22.5425 4.15385 16 4.15385C9.45755 4.15385 4.15385 9.45755 4.15385 16C4.15385 18.5261 4.9445 20.8675 6.29184 22.7902L5.23077 26.7692L9.27993 25.7569C11.1894 27.0746 13.5046 27.8462 16 27.8462Z"
+          fill="white"></path>
+        <path
+          d="M12.5 9.49989C12.1672 8.83131 11.6565 8.8905 11.1407 8.8905C10.2188 8.8905 8.78125 9.99478 8.78125 12.05C8.78125 13.7343 9.52345 15.578 12.0244 18.3361C14.438 20.9979 17.6094 22.3748 20.2422 22.3279C22.875 22.2811 23.4167 20.0154 23.4167 19.2503C23.4167 18.9112 23.2062 18.742 23.0613 18.696C22.1641 18.2654 20.5093 17.4631 20.1328 17.3124C19.7563 17.1617 19.5597 17.3656 19.4375 17.4765C19.0961 17.8018 18.4193 18.7608 18.1875 18.9765C17.9558 19.1922 17.6103 19.083 17.4665 19.0015C16.9374 18.7892 15.5029 18.1511 14.3595 17.0426C12.9453 15.6718 12.8623 15.2001 12.5959 14.7803C12.3828 14.4444 12.5392 14.2384 12.6172 14.1483C12.9219 13.7968 13.3426 13.254 13.5313 12.9843C13.7199 12.7145 13.5702 12.305 13.4803 12.05C13.0938 10.953 12.7663 10.0347 12.5 9.49989Z"
+          fill="white"></path>
+        <defs>
+          <linearGradient id="paint0_linear_87_7264" x1="26.5" y1="7" x2="4" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#5BD066"></stop>
+            <stop offset="1" stop-color="#27B43E"></stop>
+          </linearGradient>
+        </defs>
+      </g>
+    </svg></a>
+
+  <script>
+    function toggleMenu() {
+      const n = document.querySelector('.navlinks');
+      const show = n.style.display !== 'flex';
+      n.style.display = show ? 'flex' : 'none';
+      if (show) {
+        n.style.position = 'absolute';
+        n.style.top = '68px';
+        n.style.left = '0';
+        n.style.right = '0';
+        n.style.background = '#fff';
+        n.style.padding = '18px 5%';
+        n.style.flexDirection = 'column';
+        n.style.alignItems = 'flex-start';
+        n.style.boxShadow = '0 20px 30px rgba(0,0,0,.08)';
+      }
+    }
+
+    /* 3D Perspective Tilt Physics */
+    function handleTilt(e, card, maxDeg = 8) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -maxDeg;
+      const rotateY = ((x - centerX) / centerX) * maxDeg;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    }
+
+    function resetTilt(card) {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    }
+
+    function sendWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const product = document.getElementById('product').value || 'LED Display';
+      const message = document.getElementById('message').value || 'Please share details and quotation.';
+      const text = `Hello LUMOORA, I am ${name}. Mobile: ${phone}. Requirement: ${product}. Details: ${message}`;
+      window.open('https://wa.me/918160470897?text=' + encodeURIComponent(text), '_blank');
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
