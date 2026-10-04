@@ -7,12 +7,15 @@
   <meta name="description"
     content="LUMOORA Display â€” LED screen manufacturing, installation and display solutions for indoor, outdoor, curved, pole mount, wall mount, mobile and rental LED screens.">
   <meta name="theme-color" content="#07133f">
-  <title>LUMOORA DISPLAY | Brighter Displays. Bigger Impact.</title>
+  <title>
+    LUMOORA DISPLAY | Brighter Displays. Bigger Impact.
+  </title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
       --navy: #07133f;
@@ -101,8 +104,8 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, .92);
+      z-index: 100;
+      background: rgba(255, 255, 255, .95);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(228, 232, 245, .8);
     }
@@ -152,9 +155,22 @@
     .menu {
       display: none;
       border: 0;
-      background: none;
-      font-size: 25px;
+      background: #edf3ff;
+      color: var(--navy);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
       cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu:hover,
+    .menu:active {
+      background: #d9e5ff;
+      color: var(--blue);
     }
 
     .hero {
@@ -224,7 +240,8 @@
 
     .hero-media {
       position: relative;
-      perspective: 1000px;
+      display: flex;
+      justify-content: center;
     }
 
     .hero-card {
@@ -232,12 +249,21 @@
       border-radius: 26px;
       padding: 10px;
       box-shadow: 0 35px 90px rgba(7, 19, 63, .25);
-      transition: transform 0.2s ease-out, box-shadow 0.3s;
-      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 40px 100px rgba(7, 19, 63, .3);
     }
 
     .hero-card img {
-      height: 560px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
       border-radius: 18px;
     }
 
@@ -289,12 +315,11 @@
       color: var(--muted);
     }
 
-    /* 3D PERSPECTIVE PRODUCTS GRID */
+    /* PRODUCTS GRID */
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
-      perspective: 1200px;
     }
 
     .card {
@@ -303,33 +328,15 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(12, 31, 83, .07);
-      transition: transform 0.15s ease-out, box-shadow 0.3s, border-color 0.3s;
-      transform-style: preserve-3d;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       position: relative;
       cursor: pointer;
     }
 
     .card:hover {
-      box-shadow: var(--shadow-3d);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(11, 28, 79, .14);
       border-color: #cbd8ff;
-    }
-
-    /* 3D Specular reflection on cards */
-    .card .card-shine {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.4), transparent 70%);
-      pointer-events: none;
-      z-index: 5;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .card:hover .card-shine {
-      opacity: 1;
     }
 
     .card-img {
@@ -349,7 +356,6 @@
 
     .card-body {
       padding: 20px;
-      transform: translateZ(15px);
     }
 
     .tag {
@@ -387,12 +393,11 @@
       transform: translateX(4px);
     }
 
-    /* 3D PERSPECTIVE FEATURES GRID */
+    /* FEATURES GRID */
     .features {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      perspective: 1000px;
     }
 
     .feature {
@@ -400,13 +405,13 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       background: #fff;
-      transition: transform 0.15s ease-out, box-shadow 0.3s, border-color 0.3s;
-      transform-style: preserve-3d;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       position: relative;
     }
 
     .feature:hover {
-      box-shadow: var(--shadow-3d);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(11, 28, 79, .1);
       border-color: #cbd8ff;
     }
 
@@ -420,12 +425,11 @@
       color: var(--muted);
     }
 
-    /* 3D PERSPECTIVE PROJECTS GALLERY */
+    /* PROJECTS GALLERY */
     .projects {
       display: grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 20px;
-      perspective: 1200px;
     }
 
     .project-big,
@@ -434,8 +438,7 @@
       overflow: hidden;
       border-radius: 22px;
       min-height: 560px;
-      transition: transform 0.2s ease-out, box-shadow 0.3s;
-      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-small {
@@ -450,7 +453,7 @@
     .project-big img,
     .project-small img {
       height: 100%;
-      transition: transform 0.5s;
+      transition: transform 0.5s ease;
     }
 
     .project-big:hover img,
@@ -460,6 +463,7 @@
 
     .project-big:hover,
     .project-small:hover {
+      transform: translateY(-4px);
       box-shadow: 0 25px 60px rgba(7, 19, 63, .3);
     }
 
@@ -473,7 +477,6 @@
       background: rgba(4, 12, 38, .75);
       backdrop-filter: blur(10px);
       color: #fff;
-      transform: translateZ(20px);
     }
 
     .project-label strong {
@@ -668,12 +671,49 @@
     }
 
     @media(max-width:900px) {
-      .navlinks {
-        display: none;
+      .menu {
+        display: inline-flex !important;
       }
 
-      .menu {
+      .navlinks {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        padding: 20px 6% 25px;
+        flex-direction: column;
+        gap: 14px;
+        align-items: stretch;
+        box-shadow: 0 20px 40px rgba(7, 19, 63, 0.12);
+        border-bottom: 2px solid #e4e8f5;
+        z-index: 999;
+      }
+
+      .navlinks.active {
+        display: flex !important;
+      }
+
+      .navlinks a {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--navy);
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f3fa;
         display: block;
+        width: 100%;
+      }
+
+      .navlinks a:hover {
+        color: var(--blue);
+      }
+
+      .navlinks .btn {
+        margin-top: 8px;
+        text-align: center;
+        width: 100%;
+        border-bottom: none;
       }
 
       .hero-grid {
@@ -721,10 +761,6 @@
 
       .hero {
         padding: 50px 0 60px;
-      }
-
-      .hero-card img {
-        height: 470px;
       }
 
       .section {
@@ -781,7 +817,11 @@
           href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
         <a class="btn btn-primary" href="tel:+918160470897">Call Now</a>
       </nav>
-      <button class="menu" aria-label="Menu" onclick="toggleMenu()">â˜°</button>
+      <button class="menu" aria-label="Toggle navigation menu" onclick="toggleMenu()" id="menuBtn">
+        <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+      </button>
     </div>
   </header>
 
@@ -790,7 +830,7 @@
       <div class="container hero-grid">
         <div>
           <span class="kicker">LED SCREEN MANUFACTURING COMPANY</span>
-          <h1>Brighter Displays.<br><span class="gradient">Bigger Impact.</span></h1>
+          <h2>Brighter Displays.<span class="gradient">Bigger Impact.</span></h2>
           <p>Premium LED display solutions designed, manufactured and installed for advertising, branding, events,
             retail, corporate spaces and high-impact outdoor visibility.</p>
           <div class="actions">
@@ -804,7 +844,7 @@
           </div>
         </div>
         <div class="hero-media">
-          <div class="hero-card" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+          <div class="hero-card">
             <img src="assets/curve-led-installation.png" alt="LUMOORA curved LED screen installation">
           </div>
           <div class="glow"></div>
@@ -823,8 +863,7 @@
             display systems for real-world applications.</p>
         </div>
         <div class="products">
-          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
-            <div class="card-shine"></div>
+          <article class="card">
             <div class="card-img"><img src="assets/product-indoor-catalogue.jpg" alt="Indoor LED screen"></div>
             <div class="card-body"><span class="tag">INDOOR</span>
               <h3>Indoor LED Screen</h3>
@@ -832,8 +871,7 @@
               </p><a class="card-link" href="#contact">Request specification</a>
             </div>
           </article>
-          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
-            <div class="card-shine"></div>
+          <article class="card">
             <div class="card-img"><img src="assets/outdoor-pole-led-installation.jpg" alt="Outdoor LED screen"></div>
             <div class="card-body"><span class="tag">OUTDOOR</span>
               <h3>Outdoor LED Screen</h3>
@@ -841,8 +879,7 @@
                 class="card-link" href="#contact">Request specification</a>
             </div>
           </article>
-          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
-            <div class="card-shine"></div>
+          <article class="card">
             <div class="card-img"><img src="assets/product-led-wall-catalogue.jpg" alt="Rental LED screen"></div>
             <div class="card-body"><span class="tag">RENTAL & EVENTS</span>
               <h3>Rental LED Screen</h3>
@@ -850,8 +887,7 @@
               </p><a class="card-link" href="#contact">Request specification</a>
             </div>
           </article>
-          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
-            <div class="card-shine"></div>
+          <article class="card">
             <div class="card-img"><img src="assets/curved-corner-led-installation.jpg" alt="Curved LED screen"></div>
             <div class="card-body"><span class="tag">IMMERSIVE</span>
               <h3>Curved LED Screen</h3>
@@ -859,8 +895,7 @@
                 class="card-link" href="#contact">Request specification</a>
             </div>
           </article>
-          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
-            <div class="card-shine"></div>
+          <article class="card">
             <div class="card-img"><img src="assets/indoor-wall-installation.jpg" alt="Wall mount LED screen"></div>
             <div class="card-body"><span class="tag">WALL MOUNT</span>
               <h3>Wall Mount LED</h3>
@@ -868,8 +903,7 @@
               </p><a class="card-link" href="#contact">Request specification</a>
             </div>
           </article>
-          <article class="card" onmousemove="handleTilt(event, this, 8)" onmouseleave="resetTilt(this)">
-            <div class="card-shine"></div>
+          <article class="card">
             <div class="card-img"><img src="assets/pole-mount-night-installation.jpg"
                 alt="Pole mount LED advertising screen"></div>
             <div class="card-body"><span class="tag">ADVERTISING</span>
@@ -893,19 +927,19 @@
             and the customer's actual use case.</p>
         </div>
         <div class="features">
-          <div class="feature" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+          <div class="feature">
             <h3>High Brightness</h3>
             <p>Crystal-clear visuals engineered for strong visibility across indoor and outdoor applications.</p>
           </div>
-          <div class="feature" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+          <div class="feature">
             <h3>Energy Efficient</h3>
             <p>Performance-focused systems designed to deliver strong display output with efficient operation.</p>
           </div>
-          <div class="feature" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+          <div class="feature">
             <h3>Seamless Display</h3>
             <p>Professional cabinet and module integration for a clean, continuous visual experience.</p>
           </div>
-          <div class="feature" onmousemove="handleTilt(event, this, 6)" onmouseleave="resetTilt(this)">
+          <div class="feature">
             <h3>Custom Solutions</h3>
             <p>Custom sizes, structures and formats to match your location, application and branding needs.</p>
           </div>
@@ -923,21 +957,18 @@
           <p>A selection of LED display applications represented by your supplied installation images.</p>
         </div>
         <div class="projects">
-          <a class="project-big" href="#contact" onmousemove="handleTilt(event, this, 5)"
-            onmouseleave="resetTilt(this)"><img src="assets/pole-mount-temple-installation.png"
+          <a class="project-big" href="#contact"><img src="assets/pole-mount-temple-installation.png"
               alt="Pole mount LED installation">
             <div class="project-label"><strong>Pole Mount Advertising</strong><span>Roadside, commercial &
                 high-visibility locations</span></div>
           </a>
           <div class="project-stack">
-            <a class="project-small" href="#contact" onmousemove="handleTilt(event, this, 5)"
-              onmouseleave="resetTilt(this)"><img src="assets/wall-mount-commercial-installation.jpg"
+            <a class="project-small" href="#contact"><img src="assets/wall-mount-commercial-installation.jpg"
                 alt="Wall mount LED installation">
               <div class="project-label"><strong>Wall Mount Display</strong><span>Retail & commercial branding</span>
               </div>
             </a>
-            <a class="project-small" href="#contact" onmousemove="handleTilt(event, this, 5)"
-              onmouseleave="resetTilt(this)"><img src="assets/pole-mount-roadside-installation.png"
+            <a class="project-small" href="#contact"><img src="assets/pole-mount-roadside-installation.png"
                 alt="Outdoor LED advertising">
               <div class="project-label"><strong>Outdoor Advertising</strong><span>Day & night visual
                   communication</span></div>
@@ -1139,41 +1170,33 @@
 
   <script>
     function toggleMenu() {
-      const n = document.querySelector('.navlinks');
-      const show = n.style.display !== 'flex';
-      n.style.display = show ? 'flex' : 'none';
-      if (show) {
-        n.style.position = 'absolute';
-        n.style.top = '68px';
-        n.style.left = '0';
-        n.style.right = '0';
-        n.style.background = '#fff';
-        n.style.padding = '18px 5%';
-        n.style.flexDirection = 'column';
-        n.style.alignItems = 'flex-start';
-        n.style.boxShadow = '0 20px 30px rgba(0,0,0,.08)';
+      const nav = document.querySelector('.navlinks');
+      const menuBtn = document.querySelector('.menu');
+      const icon = document.getElementById('menuIcon');
+      const isOpen = nav.classList.toggle('active');
+      if (menuBtn) menuBtn.classList.toggle('active', isOpen);
+      if (icon) {
+        if (isOpen) {
+          icon.innerHTML = '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>';
+        } else {
+          icon.innerHTML = '<path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>';
+        }
       }
     }
 
-    /* 3D Perspective Tilt Physics */
-    function handleTilt(e, card, maxDeg = 8) {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -maxDeg;
-      const rotateY = ((x - centerX) / centerX) * maxDeg;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    }
-
-    function resetTilt(card) {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    }
+    // Auto-close mobile menu on clicking any navigation link
+    document.querySelectorAll('.navlinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.querySelector('.navlinks');
+        const menuBtn = document.querySelector('.menu');
+        const icon = document.getElementById('menuIcon');
+        if (nav) nav.classList.remove('active');
+        if (menuBtn) menuBtn.classList.remove('active');
+        if (icon) {
+          icon.innerHTML = '<path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>';
+        }
+      });
+    });
 
     function sendWhatsApp(e) {
       e.preventDefault();
